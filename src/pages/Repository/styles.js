@@ -101,3 +101,61 @@ export const IssueList = styled.ul`
 		}
 	}
 `;
+
+export const Box = styled.div`
+	padding-top: 30px;
+	margin-top: 30px;
+	border-top: 1px solid #eee;
+	list-style: none;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+	strong {
+		margin-top: 5px;
+		display: flex;
+		font-size: 12px;
+		font-weight: 600;
+		height: 20px;
+		align-items: center;
+		padding: 10px;
+	}
+`;
+
+export const Button = styled.button`
+	background: #7159c1;
+	color: #fff;
+
+	padding: 0 15px;
+
+	margin-left: 20px;
+	margin-right: 18px;
+	display: flex;
+	border-radius: 4px;
+
+	align-items: center;
+`;
+
+export const ButtonPaginate = styled.button.attrs(props => ({
+	disabled:
+		(props.page === 0 && props.type === 'prev') ||
+		(props.type === 'next' && props.end === 'true'),
+}))`
+	background: #7159c1;
+	color: #fff;
+
+	padding: 0 15px;
+
+	margin-left: 20px;
+	margin-right: 18px;
+	display: flex;
+	border-radius: 4px;
+
+	align-items: center;
+
+	&[disabled] {
+		cursor: not-allowed;
+		opacity: 0.6;
+	}
+`;
